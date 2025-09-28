@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>NTE GPI — Fase 1 (Full Build)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    html,body { margin:0; padding:0; height:100%; background:#111; -webkit-user-select:none; -ms-user-select:none; user-select:none; }
+    #gameDiv { width:100%; height:calc(100vh - 48px); overflow:hidden; display:block; }
+    .topbar { height:48px; background:#274B51; color:#fff; display:flex; align-items:center; padding:0 12px; font-family: Arial, sans-serif; box-sizing:border-box; }
+    .mobile-buttons { position: absolute; bottom: 14px; left: 0; right: 0; z-index: 20; pointer-events:none; }
+    .btn { width:80px; height:80px; border-radius:40px; background: rgba(0,0,0,0.28); display:inline-block; margin: 0 8px; pointer-events:auto; }
+    .btn.jump { background: rgba(0,0,0,0.38); float:right; margin-right:22px; }
+    #footer-note { position: fixed; bottom:4px; left:4px; color:#888; font-size:11px; font-family:Arial,serif; }
+  </style>
+</head>
+<body>
+  <div class="topbar">NTE GPI — Jogo estilo Super Mario (Fase 1) — Full Build</div>
+  <div id="gameDiv"></div>
+
+  <div class="mobile-buttons" id="mobileButtons" style="display:none; padding:0 14px;">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center;">
+        <div id="btnLeft" class="btn"></div>
+        <div id="btnRight" class="btn"></div>
+      </div>
+      <div style="display:flex; align-items:center;">
+        <div id="btnJump" class="btn jump"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-note">Use setas / espaço ou botões móveis. Deploy: GitHub Pages / Netlify.</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    if(('ontouchstart' in window) || navigator.maxTouchPoints) {
+      document.getElementById('mobileButtons').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
